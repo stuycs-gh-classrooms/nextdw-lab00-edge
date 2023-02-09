@@ -1,1 +1,3 @@
-# nextdw-lab00-edge
+# Lab 00 For NeXT CS
+### Class Period:
+### Name: YOUR NAME HERE
