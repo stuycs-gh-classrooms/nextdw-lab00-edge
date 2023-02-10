@@ -27,11 +27,20 @@ void setup() {
 
   //This section used to test some of the helper methods
   color c = color(150, 200, 25);
-  //should print 125
+  //correct output: 125
   println("gray value of " + hex(c) + ": " + calculateGray(c));
-  //should print 236787
+  //correct output: 236787
   println("index of (123, 456): " + getIndexFromXY(123, 456, art));
 
+  color[] n = getNeighborColors(art, 100, 100);
+  //correct output: 0: FF66819F 1: FF65809E 2: FF65809D 3: FF65809E
+  printColorArray(n);
+  n = getNeighborColors(art, 0, 0);
+  //correct output: 0: 00000000 1: FF63809E 2: 00000000 3: FF63809E
+  printColorArray(n);
+  n = getNeighborColors(art, art.width-1, art.height-1);
+  //correct output: 0: FF36404A 1: 00000000 2: FF35424B 3: 00000000
+  printColorArray(n);
 }//setup
 
 /*================================
@@ -125,7 +134,34 @@ float getDifference(color[] colors, color c) {
   return difference;
 }//getDifference
 
+/*================================
+  Return a new PImage based on the parameter but modified by edge detection.
+
+  You must use the helper functions above.
+  The edge detection algorithm:
+  For every pixel
+    Collect the colors of all neighboring pixels.
+    Get the difference between the pixel's color and its neighbors.
+    If the difference is above the threshold parameter, the pixel
+    is an edge, set it to your edge color in the new image.
+    Otherwise, set the pixel to your non-edge color in the
+    new image.
+================================*/
 PImage edgeDetect(PImage img, float t) {
 
   return img;
 }//edgeDetect
+
+
+
+
+/*================================
+  Used to help test getNeighborColors.
+  You should not modify this method.
+================================*/
+void printColorArray(color[] cs) {
+  for (int i=0; i<cs.length; i++) {
+    print(i + ": " + hex(cs[i]) + " ");
+  }//array loop
+  println();
+}//printColorArray
