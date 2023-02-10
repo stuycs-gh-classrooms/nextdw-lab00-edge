@@ -122,7 +122,8 @@ color[] getNeighborColors(PImage img, int x, int y) {
 
 /*================================
   Returns the average difference between each of the
-  colors in colors and c.
+  colors in colors and c. Base the difference on the
+  gray value.
 
   If the value of any of the colors is 0, then that
   means there is no valid neighbor color at that index.
