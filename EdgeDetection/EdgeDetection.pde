@@ -4,7 +4,7 @@
 
   `r`: reset back to the original image.
   `g`: grayScale the image
-  `e`: perform edge detection on the image (this will be added tomorrow)
+  `e`: perform edge detection on the image
 ================================*/
 
 //To start leave these values alone.
